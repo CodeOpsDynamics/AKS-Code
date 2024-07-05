@@ -62,14 +62,14 @@ azurerm_resource_group is the resource type.
 
 Kubernetes Cluster Definition
 resource "azurerm_kubernetes_cluster" "aks" {
-  name                = "kube-aks"
+  name                = "devops-aks"
   location            = azurerm_resource_group.kube.location
   resource_group_name = azurerm_resource_group.kube.name
-  dns_prefix          = "kube-aks"
+  dns_prefix          = "kubedns-aks"
 
   default_node_pool {
     name       = "default"
-    node_count = 1
+    node_count = 5
     vm_size    = "Standard_D2_v2"
   }
 
